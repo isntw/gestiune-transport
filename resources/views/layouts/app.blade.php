@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="description" content="Administrare Transport">
+        <meta name="author" content="Iustinian Monea">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Administrare Transport</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="resources/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -30,18 +30,11 @@
     </head>
     <body>
         <div id="wrapper">
-
             @include('layouts._templates.top-navbar')
             @include('layouts._templates.side-navbar')
-
-
-
             <!-- Page Content -->
             @yield('content')
-
         </div>
-        <!-- /#wrapper -->
-
         <!-- jQuery -->
         <script src="resources/theme/js/jquery.min.js"></script>
 
