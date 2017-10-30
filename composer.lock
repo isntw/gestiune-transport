@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eba86da256ddeb8084c32d3d10e18d3",
+    "content-hash": "ed31d55c8b5169742998b37716fa5912",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1252,6 +1252,44 @@
                 "uuid"
             ],
             "time": "2017-09-22T20:46:04+00:00"
+        },
+        {
+            "name": "secondtruth/startmin",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/secondtruth/startmin.git",
+                "reference": "cfe0c0a9797831519d67f90f3d3732cd342c76cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/secondtruth/startmin/zipball/cfe0c0a9797831519d67f90f3d3732cd342c76cc",
+                "reference": "cfe0c0a9797831519d67f90f3d3732cd342c76cc",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Neff",
+                    "email": "christian.neff@gmail.com",
+                    "homepage": "http://www.secondtruth.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Admin dashboard template for Bootstrap",
+            "homepage": "http://www.secondtruth.de",
+            "keywords": [
+                "admin",
+                "backend",
+                "template",
+                "theme",
+                "web"
+            ],
+            "time": "2016-02-29T17:48:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
