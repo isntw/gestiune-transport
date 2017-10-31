@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder {
+class TransportsSeeder extends Seeder {
 
     /**
      * Run the database seeds.
@@ -10,8 +10,7 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $this->call(UsersTableSeeder::class);
-        $this->call(TransportsSeeder::class);
+        factory(\App\Transport::class, 5)->create();
     }
 
 }

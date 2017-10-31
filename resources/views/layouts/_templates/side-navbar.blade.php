@@ -7,9 +7,8 @@
                 <a href="{{route('dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="{{route('transports')}}"><i class="fa fa-truck fa-fw"></i> Transporturi</a>
+                <a href="{{route('transports.index')}}"><i class="fa fa-truck fa-fw"></i> Transporturi</a>
             </li>
         </ul>
     </div>
 </div>
-</nav>

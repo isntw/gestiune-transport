@@ -12,6 +12,6 @@
  */
 Auth::routes();
 Route::get('/', 'DashboardController@index')->name('dashboard');
-Route::get('/transports', 'TransportsController@index')->name('transports');
+Route::resource('transports', 'TransportController');
 
 

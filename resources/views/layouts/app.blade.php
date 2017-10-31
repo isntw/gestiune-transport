@@ -10,16 +10,20 @@
         <title>Administrare Transport</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="resources/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ URL::asset('resources/theme/css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
-        <link href="resources/theme/css/metisMenu.min.css" rel="stylesheet">
+        <link href="{{ URL::asset('resources/theme/css/metisMenu.min.css')}}" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="resources/theme/css/startmin.css" rel="stylesheet">
+        <link href="{{ URL::asset('resources/theme/css/startmin.css')}}" rel="stylesheet">
+        <link href="{{ URL::asset('https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" >
+        <link href="{{ URL::asset('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}" rel="stylesheet" >
+        <link href="{{ URL::asset('css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet" >
+
 
         <!-- Custom Fonts -->
-        <link href="resources/theme/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="{{ URL::asset('resources/theme/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,22 +34,26 @@
     </head>
     <body>
         <div id="wrapper">
-            @include('layouts._templates.top-navbar')
-            @include('layouts._templates.side-navbar')
-            <!-- Page Content -->
-            @yield('content')
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                @include('layouts._templates.top-navbar')
+                @include('layouts._templates.side-navbar')
+            </nav>
+
+            @include('layouts._templates.content')
+
         </div>
         <!-- jQuery -->
-        <script src="resources/theme/js/jquery.min.js"></script>
+        <script src="{{ URL::asset('resources/theme/js/jquery.min.js')}}"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="resources/theme/js/bootstrap.min.js"></script>
+        <script src="{{ URL::asset('resources/theme/js/bootstrap.min.js')}}"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
-        <script src="resources/theme/js/metisMenu.min.js"></script>
+        <script src="{{ URL::asset('resources/theme/js/metisMenu.min.js')}}"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="resources/theme/js/startmin.js"></script>
+        <script src="{{ URL::asset('resources/theme/js/startmin.js')}}"></script>
+        @stack('scripts')
 
     </body>
 </html>
