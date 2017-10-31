@@ -16,10 +16,11 @@
         <link href="{{ URL::asset('resources/theme/css/metisMenu.min.css')}}" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="{{ URL::asset('resources/theme/css/startmin.css')}}" rel="stylesheet">
         <link href="{{ URL::asset('https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css')}}" rel="stylesheet" >
         <link href="{{ URL::asset('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}" rel="stylesheet" >
         <link href="{{ URL::asset('css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet" >
+        <link href="{{ URL::asset('resources/theme/css/startmin.css')}}" rel="stylesheet">
+
 
 
         <!-- Custom Fonts -->

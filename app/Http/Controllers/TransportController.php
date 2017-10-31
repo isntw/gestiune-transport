@@ -31,6 +31,7 @@ class TransportController extends Controller {
     public function store(Request $request) {
 //        array_merge($request->only('adresa_plecare', 'adresa_destinatie', 'firma', 'km', 'incasare'),['ad'=>'asd'])
         Transport::create($request->all());
+        return redirect(route('transports.index'));
     }
 
 }
