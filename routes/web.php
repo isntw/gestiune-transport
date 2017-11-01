@@ -13,5 +13,6 @@
 Auth::routes();
 Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::resource('transports', 'TransportController');
+Route::resource('costs', 'CostController');
 
 

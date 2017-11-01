@@ -51,6 +51,9 @@
         ],
         "publish": [
             "php artisan vendor:publish --tag=libs"
+        ],
+        "db" : [
+            "php artisan migrate:fresh --seed"
         ]
     },
     "config": {

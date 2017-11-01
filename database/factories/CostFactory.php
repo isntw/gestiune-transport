@@ -4,8 +4,7 @@ use Faker\Generator as Faker;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 
-$factory->define(\App\Transport::class, function (Faker $faker) {
-
+$factory->define(Model::class, function (Faker $faker) {
     return [
         'adresa_plecare' => $faker->address,
         'adresa_destinatie' => $faker->address,

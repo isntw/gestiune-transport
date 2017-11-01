@@ -10,7 +10,7 @@ class TransportsSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        factory(\App\Transport::class, 5)->create();
+        factory(\App\Transport::class, 50)->create();
     }
 
 }
