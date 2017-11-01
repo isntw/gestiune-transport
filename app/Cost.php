@@ -5,13 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\CostCategory;
 
-class Cost extends Model {
+class Cost extends Model
+{
 
     protected $fillable = [
         'category_id',
-        'pay_date',
         'suma',
         'detalii',
+    ];
+    protected $dates = [
+        'pay_date',
+        'created_at',
+        'udpated_at',
     ];
 
     public function costCategory() {

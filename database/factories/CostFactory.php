@@ -4,14 +4,11 @@ use Faker\Generator as Faker;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(\App\Cost::class, function (Faker $faker) {
     return [
-        'adresa_plecare' => $faker->address,
-        'adresa_destinatie' => $faker->address,
-        'data_plecare' => $faker->dateTimeThisYear,
-        'data_destinatie' => $faker->dateTimeThisYear,
-        'firma' => $faker->company,
-        'km' => $faker->numberBetween(1, 100),
-        'incasare' => $faker->numberBetween(0, 1000),
+        'category_id' => $faker->numberBetween(1, 6),
+        'pay_date' => $faker->dateTimeThisYear,
+        'suma' => $faker->numberBetween(0, 1000),
+        'detalii' => $faker->text(50),
     ];
 });

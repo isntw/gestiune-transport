@@ -4,17 +4,23 @@
         <table class="table table-striped table-bordered table-hover" id="transporturi">
             <thead>
                 <tr>                 
-                    <th>Firma</th>
-                    <th>Adresa Plecare</th>
-                    <th>Adresa Destinatie</th>
-                    <th>Data Plecare</th>
-                    <th>Data Destinatie</th>
-                    <th>KM</th>
-                    <th>Incasare</th>
+                    <th>Nr. Intrare</th>
+                    <th>Tip Cheltuiala</th>
+                    <th>Data</th>
+                    <th>Detalii</th>
+                    <th>Suma</th>
                 </tr>
             </thead>
             <tbody>
-
+                @foreach($costs as $cost)
+                <tr class="odd gradeX">
+                    <td>{{$cost->id}}</td>
+                    <td>{{$cost->costCategory->name}}</td>
+                    <td>{{Carbon\Carbon::parse($cost->pay_date)->format('d-m-Y')}}</td>
+                    <td>{{$cost->detalii}}</td>
+                    <td>{{$cost->suma}}</td>
+                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

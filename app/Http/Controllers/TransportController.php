@@ -15,7 +15,6 @@ class TransportController extends Controller {
         $actions = [
             ['href' => route('transports.create'), 'title' => 'Adauga Transport'],
         ];
-
         $transports = Transport::all();
         return view('transports.index')
                         ->with('title', 'Transport')

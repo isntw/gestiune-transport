@@ -24,8 +24,9 @@ class CostsSeeder extends Seeder {
                 'name' => $name,
             ]);
         }
-        
-        
+
+        factory(\App\Cost::class, 50)->create();
+
     }
 
 }
