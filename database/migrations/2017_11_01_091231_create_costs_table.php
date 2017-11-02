@@ -20,7 +20,7 @@ class CreateCostsTable extends Migration {
 
         Schema::create('costs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
+            $table->integer('category_id')->unsigned()->nullable();
             $table->timestamp('pay_date');
             $table->double('suma');
             $table->text('detalii');

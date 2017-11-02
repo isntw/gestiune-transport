@@ -13,6 +13,6 @@ $factory->define(\App\Transport::class, function (Faker $faker) {
         'data_destinatie' => $faker->dateTimeThisYear,
         'firma' => $faker->company,
         'km' => $faker->numberBetween(1, 100),
-        'incasare' => $faker->numberBetween(0, 1000),
+        'incasare' => $faker->numberBetween(2000, 3000),
     ];
 });

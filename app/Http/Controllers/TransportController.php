@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transport;
+use Carbon\Carbon;
 
 class TransportController extends Controller {
 
@@ -28,9 +29,14 @@ class TransportController extends Controller {
     }
 
     public function store(Request $request) {
-//        array_merge($request->only('adresa_plecare', 'adresa_destinatie', 'firma', 'km', 'incasare'),['ad'=>'asd'])
-        Transport::create($request->all());
-        return redirect(route('transports.index'));
+        return \DB::transaction(function () use ($request) {
+                    Transport::create(array_merge($request->only('adresa_destinatie', 'adresa_plecare', 'km', 'incasare', 'firma'), [
+                        'data_destinatie' => Carbon::parse($request->input('data_destinatie'))->format('Y-m-d'),
+                        'data_plecare' => Carbon::parse($request->input('data_plecare'))->format('Y-m-d'),
+                                    ]
+                    ));
+                    return redirect(route('transports.index'));
+                }, 5);
     }
 
 }
