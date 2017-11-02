@@ -73,7 +73,18 @@
     </div>
 
 </div>
+<div class="row">
+    <div class="col-lg-4">
 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Incasari/Luna
+            </div>
+<div id="cheltuieli" style="height: 250px;"></div>
+        </div>
+    </div>
+
+</div>
 
 <div class="row">
     <div class="col-lg-12">
@@ -87,6 +98,7 @@
     </div>
 
 </div>
+
 
 @push('scripts')
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
@@ -113,6 +125,16 @@ element: 'incasari',
         ykeys: ['venituri', 'cheltuieli'],
         labels: ['Venituri/Lei' , 'cheltuieli'],
 });
+
+Morris.Donut({
+  element: 'cheltuieli',
+  data: [
+    {label: "Download Sales", value: 200},
+    {label: "In-Store Sales", value: 325},
+    {label: "Mail-Order Sales", value: 70}
+  ]
+});
+
 </script>
 @endpush
 @endsection

@@ -32,9 +32,14 @@ class DashboardController extends Controller {
                 ->selectRaw('sum(incasare) as incasare, sum(km) as km')
                 ->first();
 
+        $costsInfo = \DB::table('costs')
+                        ->whereBetween('pay_date', [\Carbon\Carbon::now()->startOfMonth(), \Carbon\Carbon::now()->endOfMonth()])->get();
+       
+
         return view('dashboard.index')
                         ->with('title', 'Dashboard')
                         ->with('results', $results)
+                        ->with('costsInfo', $costsInfo)
                         ->with('transportsInfo', $transportsInfo);
     }
 
@@ -57,5 +62,21 @@ class DashboardController extends Controller {
         }
         return $sum;
     }
-
+    public function getCosts($costInfo, $id) {
+        $suma = [];
+        switch ($id){
+            case 1: $suma['taxa'] = $costInfo->suma;
+                break;
+            case 2: $suma += $costInfo->suma;
+                break;
+            case 3: $suma += $costInfo->suma;
+                break;
+            case 4: $suma += $costInfo->suma;
+                break;
+            case 5: $suma += $costInfo->suma;
+                break;
+            case 6: $suma += $costInfo->suma;
+                break;
+        }
+    }
 }

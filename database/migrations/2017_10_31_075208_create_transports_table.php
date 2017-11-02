@@ -13,6 +13,7 @@ class CreateTransportsTable extends Migration {
      */
     public function up() {
         Schema::create('transports', function (Blueprint $table) {
+//          Data  Ruta	Dis.km	km/Cr	km	T/Cr	Kg/Cr	Lei	Firma
             $table->increments('id');
             $table->string('adresa_plecare');
             $table->string('adresa_destinatie');
