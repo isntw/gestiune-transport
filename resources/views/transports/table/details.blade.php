@@ -4,6 +4,7 @@
         <table class="table table-striped table-bordered table-hover" id="transporturi">
             <thead>
                 <tr>                
+                    <th>#</th>
                     <th>Firma</th>
                     <th>Adresa Plecare</th>
                     <th>Adresa Destinatie</th>
@@ -18,6 +19,7 @@
             <tbody>
                 @foreach($transports as $transport)
                 <tr class="odd gradeX">
+                    <td>{{$transport->id}}</td>
                     <td>{{$transport->firma}}</td>
                     <td>{{$transport->adresa_plecare}}</td>
                     <td>{{$transport->adresa_destinatie}}</td>
