@@ -30,8 +30,7 @@ class TransportController extends Controller {
 
     public function store(Request $request) {
         return \DB::transaction(function () use ($request) {
-                    Transport::create(array_merge($request->only('adresa_destinatie', 'adresa_plecare', 'km', 'incasare', 'firma'), [
-                        'data_destinatie' => Carbon::parse($request->input('data_destinatie'))->format('Y-m-d'),
+                    Transport::create(array_merge($request->only('firma', 'adresa_plecare', 'adresa_destinatie', 'km', 'dislocare_km', 'timp', 'kg', 'suma'), [
                         'data_plecare' => Carbon::parse($request->input('data_plecare'))->format('Y-m-d'),
                                     ]
                     ));

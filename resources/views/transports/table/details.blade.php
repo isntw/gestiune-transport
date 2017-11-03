@@ -3,14 +3,16 @@
     <div class="dataTable_wrapper">
         <table class="table table-striped table-bordered table-hover" id="transporturi">
             <thead>
-                <tr>                 
+                <tr>                
                     <th>Firma</th>
                     <th>Adresa Plecare</th>
                     <th>Adresa Destinatie</th>
+                    <th>Km</th>
+                    <th>Dis. Km</th>
                     <th>Data Plecare</th>
-                    <th>Data Destinatie</th>
-                    <th>KM</th>
-                    <th>Incasare</th>
+                    <th>Durata</th>
+                    <th>Kg</th>
+                    <th>Valoare</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,10 +21,12 @@
                     <td>{{$transport->firma}}</td>
                     <td>{{$transport->adresa_plecare}}</td>
                     <td>{{$transport->adresa_destinatie}}</td>
-                    <td>{{Carbon\Carbon::parse($transport->data_plecare)->format('d-m-Y')}}</td>
-                    <td>{{Carbon\Carbon::parse($transport->data_destinatie)->format('d-m-Y')}}</td>
                     <td>{{$transport->km}}</td>
-                    <td>{{$transport->incasare}}</td>
+                    <td>{{$transport->dislocare_km}}</td>
+                    <td>{{Carbon\Carbon::parse($transport->data_plecare)->format('d-m-Y')}}</td>
+                    <td>{{$transport->timp}}</td>
+                    <td>{{$transport->kg}}</td>
+                    <td>{{$transport->suma}}</td>
                 </tr>
                 @endforeach
             </tbody>

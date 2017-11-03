@@ -13,15 +13,25 @@ class CreateTransportsTable extends Migration {
      */
     public function up() {
         Schema::create('transports', function (Blueprint $table) {
-//          Data  Ruta	Dis.km	km/Cr	km	T/Cr	Kg/Cr	Lei	Firma
+//            firma
+//            adresa_plecare
+//            adresa_destinatie
+//            dislocare_km
+//            km
+//            data_plecare
+//            timp
+//            kg
+//            suma
             $table->increments('id');
+            $table->string('firma');
             $table->string('adresa_plecare');
             $table->string('adresa_destinatie');
-            $table->timestamp('data_plecare');
-            $table->timestamp('data_destinatie')->nullable();
-            $table->string('firma');
             $table->double('km');
-            $table->double('incasare');
+            $table->double('dislocare_km');
+            $table->timestamp('data_plecare');
+            $table->double('timp');
+            $table->double('kg');
+            $table->double('suma');
             $table->timestamps();
         });
     }

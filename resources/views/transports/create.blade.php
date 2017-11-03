@@ -9,7 +9,6 @@
         <div class="form-group">
             <label>Firma</label>
             <input class="form-control" name="firma">
-            <!--<p class="help-block">Example block-level help text here.</p>-->
         </div>
         <div class="form-group">
             <label>Adresa Plecare</label>
@@ -20,24 +19,31 @@
             <input class="form-control" name="adresa_destinatie">
         </div>
         <div class="form-group">
-            <label for="data_plecare">Data Plecare</label>
-            <input type="text" class="form-control datetimepicker" name="data_plecare">
-        </div>
-        <div class="form-group">
-            <label for="data_destinatie">Data Destinatie</label>
-            <input type="text" class="form-control datetimepicker" name="data_destinatie">
-        </div>
-        <div class="form-group">
             <label>Disanta(km)</label>
             <input class="form-control" name="km">
         </div>
         <div class="form-group">
-            <label>Incasare</label>
-            <input class="form-control" name="incasare">
+            <label>Dislocare(km)</label>
+            <input class="form-control" name="dislocare_km">
+        </div>
+        <div class="form-group">
+            <label for="data_plecare">Data Plecare</label>
+            <input type="text" class="form-control datetimepicker" name="data_plecare">
+        </div>
+        <div class="form-group">
+            <label for="data_destinatie">Durata Transport</label>
+            <input type="text" class="form-control" name="timp">
+        </div>
+        <div class="form-group">
+            <label>Kilograme/Transport</label>
+            <input class="form-control" name="kg">
+        </div>
+        <div class="form-group">
+            <label>Valoare Transport (Lei)</label>
+            <input class="form-control" name="suma">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Adauga</button>
-
         </div>
     </form>
 </div>

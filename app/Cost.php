@@ -5,8 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\CostCategory;
 
-class Cost extends Model
-{
+class Cost extends Model {
 
     protected $fillable = [
         'category_id',
