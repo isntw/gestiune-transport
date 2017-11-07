@@ -4,12 +4,12 @@
 <div class="row">
     @include('dashboard.components.statistics')
 </div>
-<div class="row">
+<div class="row">    
+    @include('dashboard.components.grafic_cheltuieli_vanzari')
     @include('dashboard.components.cheltuieli')
 </div>
 
 <div class="row">
-    @include('dashboard.components.grafic_cheltuieli_vanzari')
 </div>
 
 @push('scripts')
@@ -28,10 +28,10 @@
             xkey: 'month',
             xLabelFormat: function (x) {
             var monthNames = [
-                    "Ianuarie", "Februarie", "Martie",
-                    "Aprilie", "Mai", "Iunie", "Iulie",
-                    "August", "Septembrie", "Octombrie",
-                    "Noiembrie", "Decembrie"
+                    "Ian", "Feb", "Mar",
+                    "Apr", "Mai", "Iun", "Iul",
+                    "Aug", "Sep", "Oct",
+                    "Noi", "Dec"
             ];
             return monthNames[x.getMonth()];
             },
