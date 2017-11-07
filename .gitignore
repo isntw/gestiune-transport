@@ -11,6 +11,6 @@ npm-debug.log
 yarn-error.log
 /nbproject/*
 public/resources/theme/*
-public/.htaccess
 .env
 .htaccess
+/public/.htaccess
