@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-class CostCategorySeeder extends Seeder {
-
+class CostCategorySeeder extends Seeder
+{
     /**
      * Run the database seeds.
      *
@@ -15,5 +15,4 @@ class CostCategorySeeder extends Seeder {
             \App\CostCategory::create(['name' => $name]);
         }
     }
-
 }
