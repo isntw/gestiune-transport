@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Cost;
 use App\Transport;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DashboardController extends Controller {
 
@@ -96,6 +98,28 @@ class DashboardController extends Controller {
             $suma['Total'] += $costInfo->suma;
         }
         return $suma;
+    }
+
+    public function statistics(Request $request) {
+
+        $start_date = Carbon::createFromFormat('m-Y', $request->input('month'))->startOfMonth();
+//        $start_date = Carbon::now()->startOfMonth();
+        $end_date = $start_date->copy()->endOfMonth();
+        $total = $this->initArray();
+        $transports = Transport::whereBetween('data_plecare', [$start_date, $end_date])->orderBy('data_plecare')->get();
+        foreach ($transports as $transport) {
+            $total['total_km'] += $transport->km;
+            $total['total_suma'] += $transport->suma;
+        }
+        return response()->json($total);
+    }
+
+    public function initArray() {
+        $data = [];
+        $data['total_km'] = 0;
+        $data['total_suma'] = 0;
+
+        return $data;
     }
 
 }

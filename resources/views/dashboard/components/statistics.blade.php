@@ -6,7 +6,7 @@
                     <i class="fa fa-tasks fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                    <div class="huge">{{is_null($transportsInfo->suma) ? 0 : $transportsInfo->suma }}</div>
+                    <div class="huge suma">0</div>
                     <div><b>LEI</b></div>
                 </div>
             </div>
