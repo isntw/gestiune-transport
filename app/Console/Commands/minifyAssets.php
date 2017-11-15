@@ -46,6 +46,8 @@ class minifyAssets extends Command {
                 base_path('vendor/moment/moment/min/moment.min.js'),
                 base_path('vendor/moment/moment/min/moment-with-locales.min.js'),
                 base_path('public/resources/theme/js/jquery.min.js'),
+                base_path('public/resources/theme/js/dataTables/jquery.dataTables.min.js'),
+                base_path('public/resources/theme/js/dataTables/dataTables.bootstrap.min.js'),
                 base_path('public/resources/theme/js/bootstrap.min.js'),
                 base_path('public/resources/theme/js/metisMenu.min.js'),
                 base_path('public/resources/theme/js/startmin.js'),

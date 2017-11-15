@@ -48,13 +48,12 @@
     </form>
 </div>
 @push('scripts')
-<script src="{{ URL::asset('js/bootstrap-datetimepicker.min.js')}}"></script>
 <script>
-$('.datetimepicker').datetimepicker({
-    minView: 2,
-    //format: 'dd/mm/yyyy',
-    autoclose: true
-});
+    $('.datetimepicker').datetimepicker({
+        minView: 2,
+        //format: 'dd/mm/yyyy',
+        autoclose: true
+    });
 </script>
 @endpush
 @endsection
