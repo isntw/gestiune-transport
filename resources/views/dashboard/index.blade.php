@@ -4,7 +4,8 @@
 <div class="row">
     <div class="col-md-12">
         {!! Form::open(['url' => '#', 'method' => 'GET']) !!}
-        {!! Form::text('month', \Carbon\Carbon::now()->format('m-Y'),['class' => 'form-control datetimepicker']) !!}
+        {!! Form::label('Selecteaza luna:') !!}
+        {!! Form::text('month', \Carbon\Carbon::now()->format('m-Y'),['class' => 'form-control datetimepicker', 'style' => 'cursor:pointer;']) !!}
         {!! Form::close() !!}
     </div>
 </div>
@@ -33,8 +34,16 @@
             data: {month: date},
             method: 'GET',
             success: function (data){
-                console.log(data);
-            $('.suma').html(data.total_suma);
+                
+            $('.suma').html(data.total.total_suma);
+            $('.km').html(data.total.total_km);
+            $('.cheltuieli').html(data.total.total_cheltuieli);
+            $("#cheltuieli").empty();
+
+            var donut = new Morris.Donut({
+            element: 'cheltuieli',
+                    data: data.cheltuieli
+            });
             },
     });
     }
@@ -59,19 +68,13 @@
             ykeys: ['venituri', 'cheltuieli'],
             labels: ['Venituri/Lei', 'Cheltuieli/Lei'],
     });
-    new Morris.Donut({
-    element: 'cheltuieli',
-            data: [
-            {!!  $costInfo['Motorina'] != 0 ? '{label: "Motorina", value: '.$costInfo['Motorina'].'},': ''!!}
-            {!!  $costInfo['Consumabile'] != 0 ? '{label: "Consumabile", value: '.$costInfo['Consumabile'].'},': ''!!}
-            {!!  $costInfo['Piese'] != 0 ? '{label: "Piese", value: '.$costInfo['Piese'].'},': ''!!}
-            {!!  $costInfo['Manopera'] != 0 ? '{label: "Manopera", value: '.$costInfo['Manopera'].'},': ''!!}
-            {!!  $costInfo['TAXE'] != 0 ? '{label: "TAXE", value: '.$costInfo['TAXE'].'},': ''!!}
-            {!!  $costInfo['Altele'] != 0 ? '{label: "Altele", value: '.$costInfo['Altele'].'},': ''!!}
-            ]
-    });
     $(document).ready(function () {
-        updateStats(moment().format('MM-YYYY'));
+        
+    var donut = new Morris.Donut({
+    element: 'cheltuieli',
+    });
+    
+    updateStats(moment().format('MM-YYYY'));
     $('.datetimepicker')
             .datetimepicker({
             format: 'mm-yyyy',
@@ -80,7 +83,8 @@
                     maxView: 3,
                     autoclose:true,
             });
-    $('.datetimepicker').on('changeDate', function(ev){
+    
+        $('.datetimepicker').on('changeDate', function(ev){
     var date = moment(ev.date);
     updateStats(date.format('MM-YYYY'));
     });

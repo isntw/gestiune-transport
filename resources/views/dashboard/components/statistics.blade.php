@@ -29,7 +29,7 @@
                     <i class="fa fa-credit-card fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                    <div class="huge">{{ $costInfo['Total'] != 0 ? $costInfo['Total'] : 0  }}</div>
+                    <div class="huge cheltuieli">0</div>
                     <div><b>LEI</b></div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                     <i class="fa fa-road fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                    <div class="huge">{{is_null($transportsInfo->km) ? 0 : $transportsInfo->km }}</div>
+                    <div class="huge km">0</div>
                     <div><b>KM</b></div>
                 </div>
             </div>

@@ -16,4 +16,4 @@ Route::resource('transports', 'TransportController');
 Route::resource('costs', 'CostController');
 
 
-Route::get('/statistics', 'DashboardController@statistics')->name('dashboard.statistics');
+Route::get('/statistics', 'Api\DashboardStatisticsController@statistics')->name('dashboard.statistics');

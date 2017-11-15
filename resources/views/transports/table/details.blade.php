@@ -14,6 +14,7 @@
                     <th>Durata</th>
                     <th>Kg</th>
                     <th>Valoare</th>
+                    <th>Actiuni</th>
                 </tr>
             </thead>
             <tbody>
