@@ -155,6 +155,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         odannyc\Alertify\AlertifyServiceProvider::class,
+        Kamaln7\Toastr\ToastrServiceProvider::class,
         /*
          * Custom Service Providers
          */
@@ -208,5 +209,6 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Alertify' => odannyc\Alertify\Alertify::class,
+        'Toastr' => Kamaln7\Toastr\Facades\Toastr::class,
     ],
 ];

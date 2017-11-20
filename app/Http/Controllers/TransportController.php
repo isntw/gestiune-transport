@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Transport;
 use Carbon\Carbon;
-use odannyc\Alertify\Alertify;
+use App\Http\Requests\Transports\StoreTransportRequest;
 
 class TransportController extends Controller {
 
@@ -30,13 +30,14 @@ class TransportController extends Controller {
                         ->with('title', 'Adauga Transport');
     }
 
-    public function store(Request $request) {
+    public function store(StoreTransportRequest $request) {
         return \DB::transaction(function () use ($request) {
+
                     Transport::create(array_merge($request->only('firma', 'adresa_plecare', 'adresa_destinatie', 'km', 'dislocare_km', 'timp', 'kg', 'suma'), [
-                        'data_plecare' => Carbon::parse($request->input('data_plecare'))->format('Y-m-d'),
-                                    ]
-                    ));
-                    return redirect(route('transports.index'))->with('success', 'Transport creat');
+                        'data_plecare' => Carbon::createFromFormat('d/m/Y', $request->input('data_plecare'))->toDateTimeString(),
+                    ]));
+                    \Toastr::success('Transportul a fost creat cu succes');
+                    return redirect(route('transports.index'));
                 }, 5);
     }
 
@@ -52,13 +53,15 @@ class TransportController extends Controller {
     public function update(Request $request, Transport $transport) {
         return \DB::transaction(function () use ($request, $transport) {
                     $transport->update($request->only('id', 'firma', 'adresa_plecare', 'adresa_destinatie', 'km', 'dislocare_km', 'data_plecare', 'timp', 'kg', 'suma'));
-                    return redirect()->route('transports.index')->with('success', 'Transport editat');
+                    \Toastr::success('Transportul a fost modificat cu succes');
+                    return redirect()->route('transports.index');
                 }, 5);
     }
 
     public function destroy(Request $request, Transport $transport) {
         $transport->delete();
-        return redirect()->back()->with('success', 'Transport sters');
+        \Toastr::success('Transportul a fost sters');
+        return redirect()->back();
     }
 
 }

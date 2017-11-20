@@ -4,6 +4,6 @@ function deleteResource(title, message, id) {
                 $('#' + id).submit();
             },
             function () {
-                alertify.error("Stergere Anulata!");
+                toastr['error']('Stergere anulata');
             });
 }

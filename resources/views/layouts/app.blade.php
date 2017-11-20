@@ -8,7 +8,7 @@
         <meta name="author" content="Iustinian Monea">
 
         <title>Administrare Transport</title>
-
+        {!! Html::style('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css') !!}
         {!! Html::style('/resources/libs/vendors/vendors.min.css') !!}
     </head>
     <body>
@@ -20,13 +20,8 @@
             @include('layouts._templates.content')
         </div>
         {!! Html::script('/resources/libs/vendors/vendors.min.js') !!}
-        @include('alertify::alertify')
         @stack('scripts')
-        <script>
-            @if (session('success'))
-                    alertify.success("{{session('success')}}");
-            @endif
-        </script>
+        @include('layouts._templates.notifications')
 
     </body>
 </html>

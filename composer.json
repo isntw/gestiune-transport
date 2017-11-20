@@ -14,7 +14,8 @@
         "matthiasmullie/minify": "^1.3",
         "moment/moment": "^2.19",
         "odannyc/laravel-alertify": "^1.0",
-        "secondtruth/startmin": "^1.0"
+        "secondtruth/startmin": "^1.0",
+        "oriceon/toastr-5-laravel": "@dev"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -56,7 +57,7 @@
         "publish": [
             "php artisan vendor:publish --tag=libs"
         ],
-        "db" : [
+        "db": [
             "php artisan migrate:fresh --seed"
         ]
     },
