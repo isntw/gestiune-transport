@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Transport;
 use Carbon\Carbon;
+use odannyc\Alertify\Alertify;
 
 class TransportController extends Controller {
 
@@ -13,10 +14,11 @@ class TransportController extends Controller {
     }
 
     public function index(Request $request) {
+
         $actions = [
             ['href' => route('transports.create'), 'title' => 'Adauga Transport'],
         ];
-        $transports = Transport::all();
+        $transports = Transport::orderBy('created_at', 'desc')->get();
         return view('transports.index')
                         ->with('title', 'Transport')
                         ->with('actions', $actions)
@@ -34,8 +36,29 @@ class TransportController extends Controller {
                         'data_plecare' => Carbon::parse($request->input('data_plecare'))->format('Y-m-d'),
                                     ]
                     ));
-                    return redirect(route('transports.index'));
+                    return redirect(route('transports.index'))->with('success', 'Transport creat');
                 }, 5);
+    }
+
+    public function show() {
+        
+    }
+
+    public function edit(Transport $transport) {
+        return view('transports.edit')
+                        ->with('transport', $transport);
+    }
+
+    public function update(Request $request, Transport $transport) {
+        return \DB::transaction(function () use ($request, $transport) {
+                    $transport->update($request->only('id', 'firma', 'adresa_plecare', 'adresa_destinatie', 'km', 'dislocare_km', 'data_plecare', 'timp', 'kg', 'suma'));
+                    return redirect()->route('transports.index')->with('success', 'Transport editat');
+                }, 5);
+    }
+
+    public function destroy(Request $request, Transport $transport) {
+        $transport->delete();
+        return redirect()->back()->with('success', 'Transport sters');
     }
 
 }

@@ -16,5 +16,6 @@ $factory->define(\App\Transport::class, function (Faker $faker) {
         'timp' => $faker->numberBetween(2, 24),
         'kg' => $faker->numberBetween(10, 100),
         'suma' => $faker->numberBetween(100, 1000),
+        'is_payed' => false,
     ];
 });

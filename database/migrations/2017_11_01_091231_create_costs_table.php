@@ -23,9 +23,9 @@ class CreateCostsTable extends Migration {
             $table->integer('category_id')->unsigned()->nullable();
             $table->timestamp('pay_date');
             $table->double('suma');
-            $table->text('detalii');
+            $table->text('detalii')->nullable();
             $table->timestamps();
-            
+
             $table->foreign('category_id')->references('id')->on('cost_categories');
         });
     }

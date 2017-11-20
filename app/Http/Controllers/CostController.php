@@ -16,7 +16,7 @@ class CostController extends Controller {
         $actions = [
             ['href' => route('costs.create'), 'title' => 'Adauga Cheltuiala'],
         ];
-        $costs = Cost::with('costCategory')->get();
+        $costs = Cost::with('costCategory')->orderBy('created_at', 'desc')->get();
         return view('costs.index')
                         ->with('title', 'Cheltuieli')
                         ->with('costs', $costs)

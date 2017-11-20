@@ -16,6 +16,7 @@ class Transport extends Model {
         'timp',
         'kg',
         'suma',
+        'is_payed',
     ];
     protected $dates = [
         'data_plecare',

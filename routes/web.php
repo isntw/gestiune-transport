@@ -11,8 +11,9 @@
   |
  */
 Auth::routes();
+Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('transports', 'TransportController');
-Route::resource('costs', 'CostController');
+Route::resource('costs', 'CostController'); 
 
 Route::get('/statistics', 'Api\DashboardStatisticsController@statistics')->name('dashboard.statistics');

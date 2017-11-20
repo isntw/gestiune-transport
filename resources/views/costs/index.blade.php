@@ -8,7 +8,9 @@
 <script>
     $(document).ready(function () {
         $(document).ready(function () {
-            $('#transporturi').DataTable();
+            $('#transporturi').DataTable({
+                "order": []
+            });
         });
     });
 </script>
