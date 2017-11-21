@@ -19,8 +19,7 @@
                     <td>{{$cost->detalii}}</td>
                     <td>{{$cost->suma}}</td>
                     <td class="text-right">
-                        {!! \Html::viewButton('costs.show', $cost->id) !!}
-                        {!! \Html::editButton('costs.show', $cost->id) !!}
+                        {!! \Html::editButton('costs.edit', $cost->id) !!}
                         {!! \Html::deleteButton('costs.destroy', $cost->id) !!}
                     </td>
                 </tr>

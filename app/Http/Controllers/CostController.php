@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Cost;
 use App\CostCategory;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Http\Requests\Costs\StoreCostRequest;
+use App\Http\Requests\Costs\UpdateCostRequest;
 
 class CostController extends Controller {
 
@@ -31,12 +34,42 @@ class CostController extends Controller {
                         ->with('title', 'Adauga Cheltuiala');
     }
 
-    public function store(Request $request) {
+    public function store(StoreCostRequest $request) {
         return \DB::transaction(function () use ($request) {
-
-                    Cost::create($request->all());
+                    $pay_date = Carbon::createFromFormat('d/m/Y', $request->input('pay_date'))->toDateTimeString();
+                    Cost::create(array_merge($request->only('category_id', 'detalii', 'suma'), [
+                        'pay_date' => $pay_date,
+                    ]));
+                    \Toastr::success('Cheltuiala a fost creata cu succes');
                     return redirect(route('costs.index'));
                 }, 5);
+    }
+
+    public function show() {
+        
+    }
+
+    public function edit(Cost $cost) {
+        return view('costs.edit')
+                        ->with('cost', $cost);
+    }
+
+    public function update(UpdateCostRequest $request, Cost $cost) {
+        return \DB::transaction(function () use ($request, $transport) {
+                    $pay_date = Carbon::createFromFormat('d/m/Y', $request->input('pay_date'))->toDateTimeString();
+
+                    $cost->update(array_merge($request->only('category_id', 'detalii', 'suma', 'pay_date'), [
+                        'pay_date' => $pay_date,
+                    ]));
+                    \Toastr::success('Cheltuiala a fost modificata cu succes');
+                    return redirect()->route('transports.index');
+                }, 5);
+    }
+
+    public function destroy(Request $request, Cost $cost) {
+        $cost->delete();
+        \Toastr::success('Cheltuiala a fost stearsa cu succes');
+        return redirect()->back();
     }
 
 }

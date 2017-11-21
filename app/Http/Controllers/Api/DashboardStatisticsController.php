@@ -23,6 +23,7 @@ class DashboardStatisticsController extends Controller {
         foreach ($transports as $transport) {
             $total['total_km'] += $transport->km;
             $total['total_suma'] += $transport->suma;
+            $total['payed'] += $transport->is_payed ? 0 : 1;
         }
         foreach ($costs as $cost) {
             $total['total_cheltuieli'] += $cost->suma;
@@ -38,6 +39,7 @@ class DashboardStatisticsController extends Controller {
         $data['total_km'] = 0;
         $data['total_suma'] = 0;
         $data['total_cheltuieli'] = 0;
+        $data['payed'] = 0;
         return $data;
     }
 

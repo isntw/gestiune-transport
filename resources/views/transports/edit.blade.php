@@ -12,7 +12,7 @@
     {!! Form::formInput('adresa_destinatie', 'Adresa Destinatie', $transport->adresa_destinatie ) !!}
     {!! Form::formInput('km', 'Disanta(km)', $transport->km ) !!}
     {!! Form::formInput('dislocare_km', 'Dislocare(km)', $transport->dislocare_km ) !!}
-    {!! Form::formInput('data_plecare', 'Data Plecare', $transport->data_plecare, ['class' => 'datetimepicker']) !!}
+    {!! Form::formInput('data_plecare', 'Data Plecare', $transport->data_plecare->format('d/m/Y'), ['class' => 'datetimepicker']) !!}
     {!! Form::formInput('timp', 'Durata Transport', $transport->timp ) !!}
     {!! Form::formInput('kg', 'Kilograme/Transport', $transport->kg ) !!}
     {!! Form::formInput('suma', 'Valoare Transport (Lei)', $transport->suma ) !!}
@@ -23,7 +23,7 @@
 <script>
     $('.datetimepicker').datetimepicker({
         minView: 2,
-        //format: 'dd/mm/yyyy',
+        format: 'dd/mm/yyyy',
         autoclose: true
     });
 </script>

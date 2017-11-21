@@ -38,6 +38,7 @@
             $('.suma').html(data.total.total_suma);
             $('.km').html(data.total.total_km);
             $('.cheltuieli').html(data.total.total_cheltuieli);
+            $('.payed').html(data.total.payed);
             $("#cheltuieli").empty();
 
             var donut = new Morris.Donut({

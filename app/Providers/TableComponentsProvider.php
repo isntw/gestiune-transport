@@ -13,12 +13,12 @@ class TableComponentsProvider extends ServiceProvider {
      */
     public function boot() {
         \Html::macro('viewButton', function($route, $id) {
-            return "<a class='btn btn-outline btn-primary btn-xs' title='View' href='" . route($route, $id) . "'><i class='fa fa-eye'></i></a>";
+            return "<a class='btn btn-outline btn-primary btn-xs' title='Vizualizare' href='" . route($route, $id) . "'><i class='fa fa-eye'></i></a>";
         });
         \Html::macro('editButton', function($route, $id) {
-            return "<a class='btn btn-outline btn-warning btn-xs' title='Edit' href='" . route($route, $id) . "'><i class='fa fa-pencil'></i></a>";
+            return "<a class='btn btn-outline btn-warning btn-xs' title='Editeaza' href='" . route($route, $id) . "'><i class='fa fa-pencil'></i></a>";
         });
-        \Html::macro('deleteButton', function($route, $id, $isDeleted = false, $title = "Schimbare stare", $message = "Sunteti sigur ca doriti sa schimbati starea?") {
+        \Html::macro('deleteButton', function($route, $id, $isDeleted = false, $title = "Sterge", $message = "Sunteti sigur ca doriti sa schimbati starea?") {
             $realId = is_array($id) ? $id[count($id) - 1] : $id;
             $state = $isDeleted ? 'btn-success' : 'btn-danger';
             $icon = $isDeleted ? 'fa-check' : 'fa-times';

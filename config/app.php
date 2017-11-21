@@ -156,11 +156,13 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         odannyc\Alertify\AlertifyServiceProvider::class,
         Kamaln7\Toastr\ToastrServiceProvider::class,
+        browner12\helpers\HelperServiceProvider::class,
         /*
          * Custom Service Providers
          */
         \App\Providers\TableComponentsProvider::class,
         \App\Providers\FormComponentsProvider::class,
+        \App\Providers\HtmlComponentsProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
