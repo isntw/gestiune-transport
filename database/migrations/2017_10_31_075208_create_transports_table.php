@@ -28,7 +28,7 @@ class CreateTransportsTable extends Migration {
             $table->string('adresa_destinatie');
             $table->double('km');
             $table->double('dislocare_km');
-            $table->timestamp('data_plecare');
+            $table->dateTime('data_plecare');
             $table->double('timp');
             $table->double('kg');
             $table->double('suma');
