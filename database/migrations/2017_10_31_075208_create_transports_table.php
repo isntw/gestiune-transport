@@ -12,9 +12,18 @@ class CreateTransportsTable extends Migration {
      * @return void
      */
     public function up() {
+        Schema::create('companies', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('cui');
+            $table->text('note');
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
         Schema::create('transports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('firma');
+            $table->integer('firma_id')->unsigned()->nullable();
             $table->string('adresa_plecare');
             $table->string('adresa_destinatie');
             $table->double('km');
@@ -25,6 +34,9 @@ class CreateTransportsTable extends Migration {
             $table->double('suma');
             $table->boolean('is_payed')->default(false);
             $table->timestamps();
+
+            $table->foreign('firma_id')
+                    ->references('id')->on('companies');
         });
     }
 
@@ -34,6 +46,8 @@ class CreateTransportsTable extends Migration {
      * @return void
      */
     public function down() {
+        Schema::dropIfExists('companies');
+
         Schema::dropIfExists('transports');
     }
 

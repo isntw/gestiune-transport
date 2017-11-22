@@ -14,7 +14,7 @@
         {!! Html::transportDetails('Durata Transport', $transport->timp,'fa-clock-o')!!}
         {!! Html::transportDetails('Kg Transport', $transport->kg,'fa-archive')!!}
         {!! Html::transportDetails('Valoare', $transport->suma,'fa-money')!!}
-        {!! Html::transportDetailsLabel('Stare', $transport->is_payed ,'fa-shopping-cart')!!}
+        {!! Html::transportDetailsLabel('Stare', $transport->is_payed ,'fa-cog')!!}
         <br>
         <a href="{{route('transports.edit', $transport->id)}}" class="btn btn-warning btn-block">Editeaza Transport</a>
 

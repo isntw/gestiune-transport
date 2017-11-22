@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 $factory->define(\App\Transport::class, function (Faker $faker) {
 
     return [
-        'firma' => $faker->company,
+        'firma_id' => $faker->numberBetween(1, 10),
         'adresa_plecare' => $faker->streetAddress,
         'adresa_destinatie' => $faker->streetAddress,
         'km' => $faker->numberBetween(10, 100),

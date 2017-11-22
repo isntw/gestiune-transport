@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transport extends Model {
 
     protected $fillable = [
-        'firma',
+        'firma_id',
         'adresa_plecare',
         'adresa_destinatie',
         'km',
@@ -23,5 +23,9 @@ class Transport extends Model {
         'created_at',
         'udpated_at',
     ];
+
+    public function company() {
+        return $this->hasOne(Company::class, 'id', 'firma_id');
+    }
 
 }

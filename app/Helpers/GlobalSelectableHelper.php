@@ -1,6 +1,7 @@
 <?php
 
 use App\CostCategory;
+use App\Company;
 
 if (!function_exists('selectableUsers')) {
 
@@ -12,6 +13,10 @@ if (!function_exists('selectableUsers')) {
      */
     function selectableCostCategory() {
         return CostCategory::get();
+    }
+
+    function selectableCompany() {
+        return Company::get();
     }
 
 }

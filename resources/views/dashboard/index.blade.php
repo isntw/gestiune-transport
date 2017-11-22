@@ -23,10 +23,6 @@
 @endsection
 
 @push('scripts')
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
 <script>
     function updateStats(date) {
     $.ajax({
@@ -34,13 +30,12 @@
             data: {month: date},
             method: 'GET',
             success: function (data){
-                
+
             $('.suma').html(data.total.total_suma);
             $('.km').html(data.total.total_km);
             $('.cheltuieli').html(data.total.total_cheltuieli);
             $('.payed').html(data.total.payed);
             $("#cheltuieli").empty();
-
             var donut = new Morris.Donut({
             element: 'cheltuieli',
                     data: data.cheltuieli
@@ -70,11 +65,10 @@
             labels: ['Venituri/Lei', 'Cheltuieli/Lei'],
     });
     $(document).ready(function () {
-        
+
     var donut = new Morris.Donut({
     element: 'cheltuieli',
     });
-    
     updateStats(moment().format('MM-YYYY'));
     $('.datetimepicker')
             .datetimepicker({
@@ -84,8 +78,7 @@
                     maxView: 3,
                     autoclose:true,
             });
-    
-        $('.datetimepicker').on('changeDate', function(ev){
+    $('.datetimepicker').on('changeDate', function(ev){
     var date = moment(ev.date);
     updateStats(date.format('MM-YYYY'));
     });

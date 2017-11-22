@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
-@include('costs.table.details')
+@include('companies.table.details')
 @endsection
+
 @push('scripts')
 <script>
     $(document).ready(function () {

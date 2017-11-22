@@ -22,7 +22,7 @@
                     @else
                     <td class="text-center"><span class='label label-danger'> Neachitat</span></td>
                     @endif
-                    <td>{{$transport->firma}}</td>
+                    <td>{{$transport->company->name}}</td>
                     <td>{{$transport->adresa_plecare}}</td>
                     <td>{{$transport->km}}</td>
                     <td>{{Carbon\Carbon::parse($transport->data_plecare)->format('d-m-Y')}}</td>

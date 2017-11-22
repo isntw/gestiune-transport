@@ -22,7 +22,7 @@ class StoreTransportRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'firma' => 'required|max:128',
+            'firma_id' => 'required|exists:companies,id',
             'adresa_plecare' => 'required|max:256',
             'adresa_destinatie' => 'required|max:256',
             'km' => 'required|numeric',

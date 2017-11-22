@@ -47,6 +47,8 @@ class minifyAssets extends Command {
                 base_path('public/css/custom.css'),
                 base_path('public/resources/alertify/css/alertify.min.css'),
                 base_path('public/resources/alertify/css/themes/default.min.css'),
+                base_path('public/resources/theme/css/morris.css'),
+                base_path('public/css/daterangepicker.css'),
             ], 'js' => [
                 base_path('public/resources/theme/js/jquery.min.js'),
                 base_path('public/resources/theme/js/bootstrap.min.js'),
@@ -59,6 +61,9 @@ class minifyAssets extends Command {
                 base_path('public/js/bootstrap-datetimepicker.min.js'),
                 base_path('public/resources/alertify/alertify.min.js'),
                 base_path('public/js/custom.js'),
+                base_path('public/resources/theme/js/morris.min.js'),
+                base_path('public/resources/theme/js/raphael.min.js'),
+                base_path('public/js/daterangepicker.js'),
         ]];
 
         $minifier = ['css' => new Minify\CSS(), 'js' => new Minify\JS()];
