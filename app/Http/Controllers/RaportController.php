@@ -27,7 +27,7 @@ class RaportController extends Controller {
             }
             return view('raports.transportsRaport')
                             ->with('transports', $transports)
-                            ->with('title', 'Transporturi');
+                            ->with('title', 'Raport Transporturi');
         } else if ($request->input('radio') == 'costs') {
             if (!$request->input('check')) {
                 $costs = \App\Cost::whereBetween('pay_date', [$start_date, $end_date])
@@ -39,7 +39,7 @@ class RaportController extends Controller {
             }
             return view('raports.costsRaport')
                             ->with('costs', $costs)
-                            ->with('title', 'Costuri');
+                            ->with('title', 'Raport Costuri');
         }
     }
 

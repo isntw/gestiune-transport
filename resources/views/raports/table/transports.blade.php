@@ -13,6 +13,9 @@
                     <th>Valoare</th>
                     <th>Actiuni</th>
                 </tr>
+<!--                <tr>                
+                    <th>Total</th>
+                </tr>-->
             </thead>
             <tbody>
                 @foreach($transports as $transport)
@@ -33,9 +36,22 @@
                         {!! \Html::editButton('transports.edit', $transport->id) !!}
                         {!! \Html::deleteButton('transports.destroy', $transport->id) !!}
                     </td>
+
                 </tr>
                 @endforeach
             </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total:</th> 
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>

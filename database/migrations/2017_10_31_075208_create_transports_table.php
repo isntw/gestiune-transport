@@ -16,7 +16,7 @@ class CreateTransportsTable extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->string('cui');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

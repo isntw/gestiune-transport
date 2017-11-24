@@ -7,12 +7,10 @@
 @push('scripts')
 <script>
     $(document).ready(function () {
-        $(document).ready(function () {
-            $('#transporturi').DataTable({
-                "order": []
-            });
+        $('#transporturi').DataTable({
+            "iDisplayLength": 25,
+            "order": []
         });
-    }
-    );
+    });
 </script>
 @endpush
