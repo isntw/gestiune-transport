@@ -63,7 +63,6 @@ class TransportController extends Controller {
     public function update(UpdateTransportRequest $request, Transport $transport) {
         return \DB::transaction(function () use ($request, $transport) {
                     $data_plecare = Carbon::createFromFormat('d/m/Y', $request->input('data_plecare'))->toDateTimeString();
-
                     $transport->update(array_merge($request->only('id', 'firma_id', 'adresa_plecare', 'adresa_destinatie', 'km', 'dislocare_km', 'data_plecare', 'timp', 'kg', 'suma'), [
                         'data_plecare' => $data_plecare,
                     ]));

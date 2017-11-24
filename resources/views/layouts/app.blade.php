@@ -22,6 +22,5 @@
         {!! Html::script('/resources/libs/vendors/vendors.min.js') !!}
         @stack('scripts')
         @include('layouts._templates.notifications')
-
     </body>
 </html>

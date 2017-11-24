@@ -4,8 +4,7 @@
 <div class="panel-heading">Detalii</div>
 <div class="panel-body">
     <div class="list-group col-md-offset-3 col-md-6">
-
-        {!! Html::transportDetails('Firma', $transport->firma,'fa-building')!!}
+        {!! Html::transportDetails('Firma', $transport->company->name,'fa-building')!!}
         {!! Html::transportDetails('Adresa Plecare', $transport->adresa_plecare,'fa-map-marker')!!}
         {!! Html::transportDetails('Adresa Destinatie', $transport->adresa_destinatie,'fa-map-marker')!!}
         {!! Html::transportDetails('Km Parcursi', $transport->km,'fa-road')!!}

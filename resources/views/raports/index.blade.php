@@ -13,7 +13,7 @@
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="radio" id="optionsRadios2" value="costs">Cheltuieli
+                <input type="radio" name="radio" id="optionsRadios2" value="costs" >Cheltuieli
             </label>
         </div>
     </div>
@@ -56,20 +56,21 @@
     }
 
     $(document).ready(function () {
-        $('input[name=start_date]').val(moment().format('DD-MM-YYYY'));
-        $('input[name=end_date]').val(moment().subtract(7, 'days').format('DD-MM-YYYY'));
+        $('input[name=start_date]').val(moment().startOf('month').format('DD-MM-YYYY'));
+        $('input[name=end_date]').val(moment().format('DD-MM-YYYY'));
 
         $('input[name=daterange]').daterangepicker({
-            startDate: moment().subtract(7, 'days'),
+            startDate: moment().startOf('month'),
             endDate: moment(),
             ranges: {
-                'Ultima Saptamana': [moment().subtract(6, 'days'), moment()],
-                'Ultima 30 zile': [moment().subtract(29, 'days'), moment()],
                 'Luna Asta': [moment().startOf('month'), moment().endOf('month')],
-                'Luna Trecuta': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                'Luna Trecuta': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                'Acum 2 Luni': [moment().subtract(2, 'month').startOf('month'), moment().subtract(2, 'month').endOf('month')],
+                'Anul Curent': [moment().startOf('year'), moment().endOf('year')],
             },
             locale: {
                 customRangeLabel: 'Selecteaza Periada',
+                format: 'DD/MM/YYYY',
             },
             "linkedCalendars": false,
             "alwaysShowCalendars": true,
