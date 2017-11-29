@@ -1060,16 +1060,16 @@
         },
         {
             "name": "matthiasmullie/minify",
-            "version": "1.3.55",
+            "version": "1.3.56",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "21084eb9e6c117f5236969532d00ed2750cd1617"
+                "reference": "86e4a4e4e7eae2d0cd74871735f18bbb132da4b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/21084eb9e6c117f5236969532d00ed2750cd1617",
-                "reference": "21084eb9e6c117f5236969532d00ed2750cd1617",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/86e4a4e4e7eae2d0cd74871735f18bbb132da4b7",
+                "reference": "86e4a4e4e7eae2d0cd74871735f18bbb132da4b7",
                 "shasum": ""
             },
             "require": {
@@ -1116,7 +1116,7 @@
                 "minifier",
                 "minify"
             ],
-            "time": "2017-10-25T11:13:12+00:00"
+            "time": "2017-11-24T12:51:16+00:00"
         },
         {
             "name": "matthiasmullie/path-converter",
@@ -2923,16 +2923,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.1.13",
+            "version": "2.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "9f640a4f129e57d3537887f840380109a4dd182b"
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/9f640a4f129e57d3537887f840380109a4dd182b",
-                "reference": "9f640a4f129e57d3537887f840380109a4dd182b",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
                 "shasum": ""
             },
             "require": {
@@ -2980,7 +2980,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2017-11-17T08:15:51+00:00"
+            "time": "2017-11-23T18:22:44+00:00"
         },
         {
             "name": "fzaninotto/faker",

@@ -163,6 +163,7 @@ return [
         \App\Providers\TableComponentsProvider::class,
         \App\Providers\FormComponentsProvider::class,
         \App\Providers\HtmlComponentsProvider::class,
+        \App\Providers\RouteModelProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------

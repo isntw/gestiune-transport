@@ -7,7 +7,7 @@
     {{ Form::open(['url' => route('transports.update', $transport->id), 'method'=> 'put', 'class' => 'col-md-6 col-md-offset-3']) }}
     {{ csrf_field() }}
     {!! Form::hidden('id', $transport->id) !!}
-    {!! Form::formDropDown('firma_id', selectableCompany()) !!}
+    {!! Form::formDropDown('firma_id', selectableCompany(), $transport->firma_id, 'Selecteaza Firma') !!}
     {!! Form::formInput('adresa_plecare', 'Adresa Plecare', $transport->adresa_plecare ) !!}
     {!! Form::formInput('adresa_destinatie', 'Adresa Destinatie', $transport->adresa_destinatie ) !!}
     {!! Form::formInput('km', 'Disanta(km)', $transport->km ) !!}

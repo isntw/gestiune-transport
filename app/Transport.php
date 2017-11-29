@@ -25,7 +25,7 @@ class Transport extends Model {
     ];
 
     public function company() {
-        return $this->hasOne(Company::class, 'id', 'firma_id');
+        return $this->hasOne(Company::class, 'id', 'firma_id')->withTrashed();
     }
 
 }

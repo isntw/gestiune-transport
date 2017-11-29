@@ -15,10 +15,12 @@
                 <tr class="odd gradeX">
                     <td>{{$company->name}}</td>
                     <td>{{$company->cui}}</td>
-                    <td>{{$company->note}}</td>
+                    <td>{{$company->note ? $company->note : '-'}}</td>
                     <td class="text-right">
+                        @unless($company->trashed())
                         {!! \Html::editButton('companies.edit', $company->id) !!}
-                        {!! \Html::deleteButton('companies.destroy', $company->id) !!}
+                        @endunless
+                        {!! \Html::deleteButton('companies.destroy', $company->id, $company->trashed()) !!}
                     </td>
                 </tr>
                 @endforeach

@@ -9,11 +9,15 @@ use App\Http\Requests\Company\StoreCompanyRequest;
 
 class CompanyController extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $actions = [
             ['href' => route('companies.create'), 'title' => 'Adauga Firma'],
         ];
-        $companies = \App\Company::orderBy('created_at', 'desc')->get();
+        $companies = \App\Company::withTrashed()->orderBy('created_at', 'desc')->get();
         return view('companies.index')
                         ->with('title', 'Firme')
                         ->with('actions', $actions)
@@ -43,6 +47,12 @@ class CompanyController extends Controller {
                     \Toastr::success('Firma a fost modificata cu succes');
                     return redirect()->route('companies.index');
                 }, 5);
+    }
+
+    public function destroy(Request $request, Company $company) {
+        $company->trashed() ? $company->restore() : $company->delete();
+        \Toastr::success('Transportul a modificat cu succes');
+        return redirect()->back();
     }
 
 }

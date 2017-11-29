@@ -9,7 +9,9 @@
 
         <title>Administrare Transport</title>
         {!! Html::style('//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css') !!}
-        {!! Html::style('/resources/libs/vendors/vendors.min.css') !!}
+        {!! Html::style('/resources/libs/vendors/vendors.min.css') !!}   
+        <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
+      
     </head>
     <body>
         <div id="wrapper">

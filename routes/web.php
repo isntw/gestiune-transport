@@ -21,3 +21,5 @@ Route::get('/statistics', 'Api\DashboardStatisticsController@statistics')->name(
 Route::get('/raports', 'RaportController@index')->name('raports.index');
 Route::get('/raports/show', 'RaportController@show')->name('raports.show');
 Route::get('/raports/option', 'Api\RaportController@feedOptions')->name('raport.option');
+
+Route::get('searchajax', array('as' => 'searchajax', 'uses' => 'Api\AutoCompleteController@autoComplete'));

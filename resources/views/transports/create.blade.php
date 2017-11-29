@@ -4,10 +4,9 @@
 
 <div class="panel-body">
 
-    {{ Form::open(['url' => route('transports.store'), 'method'=> 'post', 'class' => 'col-md-6 col-md-offset-3']) }}
-    {{ csrf_field() }}
-
-    {!! Form::formDropDown('firma_id', selectableCompany()) !!}
+    {!! Form::open(['url' => route('transports.store'), 'method'=> 'post', 'class' => 'col-md-6 col-md-offset-3']) !!}
+    {!! csrf_field() !!}
+    {!! Form::formInput('firma_id', 'Firma') !!}
     {!! Form::formInput('adresa_plecare', 'Adresa Plecare') !!}
     {!! Form::formInput('adresa_destinatie', 'Adresa Destinatie') !!}
     {!! Form::formInput('km', 'Disanta(km)') !!}
@@ -17,15 +16,18 @@
     {!! Form::formInput('kg', 'Kilograme/Transport') !!}
     {!! Form::formInput('suma', 'Valoare Transport (Lei)') !!}
     {!! Form::submit('Adauga',['class'=>'btn btn-primary'])!!}
-    {{ Form::close() }}
+    {!! Form::close() !!}
 </div>
+@endsection
+
 @push('scripts')
 <script>
-    $('.datetimepicker').datetimepicker({
-        minView: 2,
-        format: 'dd/mm/yyyy',
-        autoclose: true
+    $(document).ready(function () {
+        $('.datetimepicker').datetimepicker({
+            minView: 2,
+            format: 'dd/mm/yyyy',
+            autoclose: true
+        });
     });
 </script>
 @endpush
-@endsection

@@ -22,6 +22,7 @@ class TableComponentsProvider extends ServiceProvider {
             $realId = is_array($id) ? $id[count($id) - 1] : $id;
             $state = $isDeleted ? 'btn-success' : 'btn-danger';
             $icon = $isDeleted ? 'fa-check' : 'fa-times';
+            
             $title = $title ? $title : (!$isDeleted ? 'Sterge' : 'Activeaza');
             $formId = 'delete-form';
 

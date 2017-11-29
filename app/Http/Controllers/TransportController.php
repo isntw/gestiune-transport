@@ -19,6 +19,7 @@ class TransportController extends Controller {
         $actions = [
             ['href' => route('transports.create'), 'title' => 'Adauga Transport'],
         ];
+        
         $transports = Transport::orderBy('created_at', 'desc')->get();
         return view('transports.index')
                         ->with('title', 'Transport')
