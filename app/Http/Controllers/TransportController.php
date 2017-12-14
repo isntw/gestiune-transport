@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Transport;
-use Carbon\Carbon;
 use App\Http\Requests\Transports\StoreTransportRequest;
 use App\Http\Requests\Transports\UpdateTransportRequest;
+use App\Transport;
+use Carbon\Carbon;
 
 class TransportController extends Controller {
 
@@ -19,7 +19,7 @@ class TransportController extends Controller {
         $actions = [
             ['href' => route('transports.create'), 'title' => 'Adauga Transport'],
         ];
-        
+
         $transports = Transport::orderBy('created_at', 'desc')->get();
         return view('transports.index')
                         ->with('title', 'Transport')
@@ -81,7 +81,7 @@ class TransportController extends Controller {
     public function status(Transport $transport) {
         return \DB::transaction(function () use ($transport) {
                     $transport->is_payed ? $transport->update(['is_payed' => false]) : $transport->update(['is_payed' => true]);
-                    \Toastr::success('Transportul a fost modificat cu succes');
+                    \Toastr::success('Starea transportului a fost modificata cu succes');
                     return redirect()->route('transports.show', $transport->id);
                 }, 5);
     }

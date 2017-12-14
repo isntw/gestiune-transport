@@ -9,6 +9,7 @@ class Cost extends Model {
 
     protected $fillable = [
         'category_id',
+        'pay_date',
         'suma',
         'detalii',
     ];

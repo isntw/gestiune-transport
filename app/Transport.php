@@ -28,4 +28,8 @@ class Transport extends Model {
         return $this->hasOne(Company::class, 'id', 'firma_id')->withTrashed();
     }
 
+    public function isPayed() {
+        return $this::where('is_payed', TRUE)->get();
+    }
+
 }
