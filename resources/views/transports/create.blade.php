@@ -6,7 +6,7 @@
 
     {!! Form::open(['url' => route('transports.store'), 'method'=> 'post', 'class' => 'col-md-6 col-md-offset-3']) !!}
     {!! csrf_field() !!}
-    {!! Form::formInput('firma_id', 'Firma') !!}
+    {!! Form::formDropDown('firma_id', selectableCompany(), null, 'Selecteaza Firma') !!}
     {!! Form::formInput('adresa_plecare', 'Adresa Plecare') !!}
     {!! Form::formInput('adresa_destinatie', 'Adresa Destinatie') !!}
     {!! Form::formInput('km', 'Disanta(km)') !!}

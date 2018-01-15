@@ -14,7 +14,7 @@ class HtmlComponentsProvider extends ServiceProvider {
     public function boot() {
         \Html::macro('statisticsDiv', function($class, $name, $route = null, $unit, $icon, $panel) {
             return " <div class='col-lg-3 col-md-6'>"
-                    . "<div class='panel ".$panel."'>"
+                    . "<div class='panel " . $panel . "'>"
                     . "<div class='panel-heading'>"
                     . "   <div class='row'>"
                     . "    <div class='col-xs-3'>"
@@ -46,7 +46,7 @@ class HtmlComponentsProvider extends ServiceProvider {
         \Html::macro('transportDetailsLabel', function($name, $is_payed = false, $icon) {
 
             $label = $is_payed ? "<span class='label label-success pull-right'> Achitat" : "<span class='label label-danger pull-right'> Neachitat";
-            return "    <a class='list-group-item'>"
+            return "<a class='list-group-item'>"
                     . "<i class='fa " . $icon . " fa-fw'></i> " . $name
                     . $label
                     . "</span>"
